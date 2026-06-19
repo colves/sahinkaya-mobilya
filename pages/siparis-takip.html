@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sipariş Takip - Şahinkaya Ahşap</title>
+    <link rel="icon" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script>if(localStorage.getItem('sahinkaya_tema')==='"dark"')document.documentElement.classList.add('dark-mode');</script>
+</head>
+<body>
+<main class="bolum">
+    <h2 class="bolum-baslik">Kargo & Sipariş Takibi</h2>
+    <div class="form-kutu" style="max-width:500px; margin:0 auto; text-align:center;">
+        <p style="margin-bottom:20px; font-size:0.95rem;">Sipariş numÜrünizi (Örn: TRK123456) girerek güncel durumu öÜrünebilirsiniz.</p>
+        <div class="form-grup"><input type="text" id="takip-kodu-input" placeholder="Takip Kodunuz"></div>
+        <button class="btn-satin-al" onclick="siparisSorgula()">Sorgula</button>
+        <div id="sorgu-sonucu"></div>
+    </div>
+</main>
+
+
+    <!-- Firebase SDK (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="../js/firebase-init.js"></script>
+    
+<script src="../js/data.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/admin.js"></script>
+<script src="../js/shop.js"></script>
+<script src="../js/projects.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/effects.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
+
+

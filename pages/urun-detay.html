@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" id="meta-desc" content="Şahinkaya Ahşap ürün detay sayfası.">
+    <title id="sayfa-baslik">Ürün Detayı - Şahinkaya Ahşap</title>
+    <link rel="icon" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script>if(localStorage.getItem('sahinkaya_tema')==='"dark"')document.documentElement.classList.add('dark-mode');</script>
+</head>
+<body>
+<main class="bolum">
+    <div class="detay-kapsam">
+        <div class="galeri-alani">
+            <img id="ana-urun-resmi" src="" alt="Ürün görseli" class="ana-resim" onerror="this.src='https://via.placeholder.com/600x480?text=GORSEL'">
+            <div id="kucuk-resimler-kutusu" class="kucuk-resimler"></div>
+        </div>
+        <div class="detay-bilgi">
+            <h1 id="detay-baslik">-</h1>
+            <div id="urun-kodu-alani" class="urun-kodu">Ürün Kodu: -</div>
+            <div id="stok-durum-alani"></div>
+            <div id="detay-fiyat" class="detay-fiyat">- TL</div>
+            <p id="detay-aciklama" class="detay-aciklama">-</p>
+            <table class="ozellikler-tablosu"><tbody id="detay-ozellikler"></tbody></table>
+            <button id="detay-sepet-btn" class="btn-satin-al" style="margin-top:20px; font-size:1.1rem;">SEPETE EKLE</button>
+            <button id="detay-favori-btn" class="btn-satin-al btn-ghost">KAYDET / FAVORI</button>
+        </div>
+    </div>
+    <div class="yorum-alani">
+        <h2>Müşteri Yorumları</h2>
+        <div id="yorum-listesi"></div>
+        <div id="yorum-ekleme-formu" class="form-kutu" style="margin-top:30px; max-width:600px;">
+            <h4 style="margin-bottom:12px;">Yorum Yap</h4>
+            <select id="yeni-yorum-yildiz" style="margin-bottom:12px;">
+                <option value="5">????? (5 Yildiz)</option>
+                <option value="4">???? (4 Yildiz)</option>
+                <option value="3">??? (3 Yildiz)</option>
+                <option value="2">?? (2 Yildiz)</option>
+                <option value="1">? (1 Yildiz)</option>
+            </select>
+            <textarea id="yeni-yorum-metin" rows="3" placeholder="Yorumunuzu buraya yazin..." style="margin-bottom:12px;"></textarea>
+            <button id="btn-yorum-yap" class="btn-satin-al btn-oto">Yorum Gönder</button>
+        </div>
+    </div>
+</main>
+
+
+    <!-- Firebase SDK (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="../js/firebase-init.js"></script>
+    
+<script src="../js/data.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/admin.js"></script>
+<script src="../js/shop.js"></script>
+<script src="../js/projects.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/effects.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
+
+

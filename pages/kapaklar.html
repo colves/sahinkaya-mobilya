@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kapak Modelleri - Şahinkaya Ahşap</title>
+    <link rel="icon" href="../assets/img/logo.png">
+    <link rel="stylesheet" href="../css/main.css">
+
+    <script>if(localStorage.getItem('sahinkaya_tema')==='"dark"')document.documentElement.classList.add('dark-mode');</script>
+</head>
+<body>
+<main class="bolum">
+    <h2 class="bolum-baslik">KAPAK MODELLERİ</h2>
+    <div style="text-align:right; margin-bottom:20px;">
+        <button class="btn-satin-al btn-oto sadece-admin-btn" style="display:none; margin-top:0;" onclick="kapakEkleFormAc()">+ YENİ KAPAK EKLE</button>
+        </div>
+    <div style="text-align:center; margin-bottom:40px;">
+        <button class="btn-incele sadece-admin-btn" style="display:none; font-size:0.85rem; margin-bottom:10px;" onclick="kapaklarMetinDuzenleAc()">✏️ İçeriği Düzenle</button>
+        <p id="kapaklar-metin-alani" style="font-size:1.2rem; font-weight:500;">Yükleniyor...</p>
+    </div>
+    <div id="kapak-ekle-form" class="form-kutu" style="display:none; max-width:500px; margin:0 auto 40px auto;">
+        <h3 style="margin-bottom:15px;">Kapak Ekle</h3>
+        <div class="form-grup"><label>Kapak Kodu (Örn: HK_006)</label><input type="text" id="kapak-kodu"></div>
+        <div class="form-grup"><label>Kapak Görseli</label><input type="file" id="kapak-dosya" accept="image/*"></div>
+        <button class="btn-satin-al" onclick="kapakKaydet()">Kaydet</button>
+    </div>
+    <div id="kapaklar-katalog" class="kapak-grid"></div>
+</main>
+
+
+    <!-- Firebase SDK (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="../js/firebase-init.js"></script>
+    
+<script src="../js/data.js"></script>
+<script src="../js/layout.js"></script>
+<script src="../js/ui.js"></script>
+<script src="../js/auth.js"></script>
+<script src="../js/admin.js"></script>
+<script src="../js/shop.js"></script>
+<script src="../js/projects.js"></script>
+<script src="../js/products.js"></script>
+<script src="../js/effects.js"></script>
+<script src="../js/app.js"></script>
+</body>
+</html>
+
+
