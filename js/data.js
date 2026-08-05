@@ -72,11 +72,21 @@ let lokalProjeler = veriGetir('sahinkaya_projeler', []);
 let varsayilanProjeler = [
     { id: 2, baslik: "Sakarya Lake Mutfak", aciklama: "Özel tasarım lake mutfak projemiz.", resimler: ["assets/img/projeler_gorselleri/mutfak1.1.png", "assets/img/projeler_gorselleri/mutfak1.2.png"] }
 ];
-let projeler = lokalProjeler.length > 0 ? lokalProjeler : varsayilanProjeler;
+let projeler = [...varsayilanProjeler];
+lokalProjeler.forEach(lp => {
+    const i = projeler.findIndex(p => p.id === lp.id);
+    if(i !== -1) projeler[i] = lp;
+    else projeler.push(lp);
+});
 
 let lokalKapaklar = veriGetir('sahinkaya_kapaklar', []);
 let varsayilanKapaklar = [{ id: 1, kod: "HK_006_001", resim: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=600&q=80" }];
-let kapaklar = lokalKapaklar.length > 0 ? lokalKapaklar : varsayilanKapaklar;
+let kapaklar = [...varsayilanKapaklar];
+lokalKapaklar.forEach(lk => {
+    const i = kapaklar.findIndex(k => k.id === lk.id);
+    if(i !== -1) kapaklar[i] = lk;
+    else kapaklar.push(lk);
+});
 
 
 let iletişimBilgileri = veriGetir('sahinkaya_iletişim_bilgi', {
