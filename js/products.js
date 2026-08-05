@@ -29,8 +29,8 @@ function sayfayiCiz() {
     
     gosterilecekler.forEach(urun => {
         const anaResim = (urun.resimler && urun.resimler.length > 0) ? urun.resimler[0] : "";
-        const fytMetin = ayarlar.fiyatGizle ? `<span style="font-size:1rem; color:var(--metin-soluk);">Fiyat Gizli</span>`
-            : (ayarlar.satisAktif ? `${Number(urun.fiyat).toLocaleString('tr-TR')} TL` : `<span style="font-size:1rem; color:var(--metin-soluk);">Fiyat Sorunuz</span>`);
+        const fytMetin = ayarlar.fiyatGizle ? `<span style="font-size:1rem; color:var(--metin-soluk);"></span>`
+            : (ayarlar.satisAktif ? `${Number(urun.fiyat).toLocaleString('tr-TR')} TL` : `<span style="font-size:1rem; color:var(--metin-soluk);"></span>`);
         const btnMetin = !urun.stokta ? "STOKTA YOK" : (ayarlar.satisAktif ? "Sepete Ekle" : "WhatsApp'tan Bilgi Al");
         const btnDisabled = !urun.stokta ? "disabled" : "";
         const btnIslem = !urun.stokta ? "" : (ayarlar.satisAktif ? `sepeteEkle(${urun.id})` : `bilgiAlWhatsApp('${kacis(urun.ad)}', ${urun.id})`);

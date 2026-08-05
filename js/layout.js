@@ -43,7 +43,7 @@
             <a href="${url('iletisim')}" class="btn-contact-now" id="btn-iletisim-nav">
                 <span class="btn-dot"></span>
                 İletişim
-                <span class="btn-arrow-circle">↗</span>
+                <span class="btn-arrow-circle">\u2197\uFE0E</span>
             </a>
         </div>
     </div>

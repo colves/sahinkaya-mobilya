@@ -223,7 +223,7 @@ function sayfaUrunDetay() {
         let aciklamaTeks = urun.aciklama ? urun.aciklama.replace(/<[^>]*>?/gm, '').substring(0, 150) : "Özel üretim ahşap mobilya ve dekorasyon.";
         metaDesc.content = urun.ad + " - " + aciklamaTeks;
     }
-    getEl('detay-fiyat').innerHTML = ayarlar.fiyatGizle ? `<span style="font-size:1.2rem; color:var(--metin-soluk);">Fiyat Sorunuz</span>` : `${Number(urun.fiyat).toLocaleString('tr-TR')} TL`;
+    getEl('detay-fiyat').innerHTML = ayarlar.fiyatGizle ? `<span style="font-size:1.2rem; color:var(--metin-soluk);"></span>` : `${Number(urun.fiyat).toLocaleString('tr-TR')} TL`;
     getEl('urun-kodu-alani').innerText = "Ürün Kodu: SHN-" + urun.id.toString().slice(-4);
 
     const sDurum = getEl('stok-durum-alani');
