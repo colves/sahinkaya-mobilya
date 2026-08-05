@@ -74,13 +74,14 @@ let varsayilanProjeler = [
 ];
 let projeler = [...varsayilanProjeler];
 lokalProjeler.forEach(lp => {
+    if (lp.baslik === "3") return; // İçi boş test projesini yoksay
     const i = projeler.findIndex(p => p.id === lp.id);
     if(i !== -1) projeler[i] = lp;
     else projeler.push(lp);
 });
 
 let lokalKapaklar = veriGetir('sahinkaya_kapaklar', []);
-let varsayilanKapaklar = [{ id: 1, kod: "HK_006_001", resim: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=600&q=80" }];
+let varsayilanKapaklar = [];
 let kapaklar = [...varsayilanKapaklar];
 lokalKapaklar.forEach(lk => {
     const i = kapaklar.findIndex(k => k.id === lk.id);
