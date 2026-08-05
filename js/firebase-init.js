@@ -69,7 +69,7 @@ async function bulutSenkronizasyonu() {
         // YENİ YAPI: Koleksiyonları tek tek yükleyelim (Önceki sistem yerine)
         // 1. Ayarlar ve Kapaklar vs. (Eski yapı devam ediyor)
         snap.forEach(doc => {
-            if(doc.id === 'ayarlar_genel' || doc.id === 'sahinkaya_urunler' || doc.id === 'sahinkaya_kullanicilar' || doc.id === 'sahinkaya_kapaklar' || doc.id === 'sahinkaya_projeler') return; 
+            if(doc.id === 'ayarlar_genel' || doc.id === 'sahinkaya_urunler' || doc.id === 'sahinkaya_kullanicilar') return;
             const bulutVeri = doc.data().data;
             const k = doc.id.startsWith('sahinkaya_') ? doc.id : 'sahinkaya_' + doc.id;
             const lokalVeri = localStorage.getItem(k);

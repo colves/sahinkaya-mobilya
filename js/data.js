@@ -1,4 +1,4 @@
-﻿/* =========================================================================
+/* =========================================================================
    data.js — Veri katmanı, durum ve genel yardımcılar
    Bu dosya diğerlerinden ÖNCE yüklenir. localStorage anahtarları korunur.
    ========================================================================= */
@@ -68,10 +68,16 @@ let urunler = veriGetir('sahinkaya_urunler', [
     { id: 1004, ad: "Ceviz Kitaplık", resimler: ["https://images.unsplash.com/photo-1594620302200-9a762244a156?auto=format&fit=crop&w=800&q=80"], fiyat: 12000, aciklama: "Minimalist tasarımlı, geniş raflı ceviz kitaplık.", ozellikler: ["Malzeme: Ceviz Ağacı"], kategoriler: ["calisma"], sira: 4, yorumlar: [], stokta: true },
     { id: 1005, ad: "Modern Ahşap Mutfak Adası", resimler: ["https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=800&q=80"], fiyat: 32000, aciklama: "Geniş tezgahlı, çekmeceli modern ahşap mutfak adası.", ozellikler: ["Malzeme: Akrilik + Ahşap"], kategoriler: ["mutfak"], sira: 5, yorumlar: [], stokta: true }
 ]);
-let projeler = veriGetir('sahinkaya_projeler', [
+let lokalProjeler = veriGetir('sahinkaya_projeler', []);
+let varsayilanProjeler = [
     { id: 2, baslik: "Sakarya Lake Mutfak", aciklama: "Özel tasarım lake mutfak projemiz.", resimler: ["assets/img/projeler_gorselleri/mutfak1.1.png", "assets/img/projeler_gorselleri/mutfak1.2.png"] }
-]);
-let kapaklar = veriGetir('sahinkaya_kapaklar', [{ id: 1, kod: "HK_006_001", resim: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=600&q=80" }]);
+];
+let projeler = lokalProjeler.length > 0 ? lokalProjeler : varsayilanProjeler;
+
+let lokalKapaklar = veriGetir('sahinkaya_kapaklar', []);
+let varsayilanKapaklar = [{ id: 1, kod: "HK_006_001", resim: "https://images.unsplash.com/photo-1600566752355-35792bedcfea?auto=format&fit=crop&w=600&q=80" }];
+let kapaklar = lokalKapaklar.length > 0 ? lokalKapaklar : varsayilanKapaklar;
+
 
 let iletişimBilgileri = veriGetir('sahinkaya_iletişim_bilgi', {
     imalat: { adres: "Organize Sanayi Bölgesi", tel: "+90 (533) 663 97 14", posta: "sahinkayaadem@gmail.com", harita: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12093.58572120025!2d30.3955!3d40.7588!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ1JzMxLjciTiAzMMKwMjMnNDMuOCJF!5e0!3m2!1str!2str!4v1600000000000!5m2!1str!2str" },
