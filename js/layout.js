@@ -8,7 +8,7 @@
     <div class="nav-header">
         <button class="hamburger-btn" onclick="mobilMenuGoster()" aria-label="Menü">☰</button>
         <div class="sol-grup">
-            <a href="${url('index')}" aria-label="Ana sayfa">
+            <a href="/" aria-label="Ana sayfa">
                 <img src="${url('assets/img/logo.png')}" alt="ŞAHİNKAYA AHŞAP" class="logo-img"
                      onerror="this.style.display='none'">
             </a>

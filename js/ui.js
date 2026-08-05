@@ -1,4 +1,4 @@
-﻿/* =========================================================================
+/* =========================================================================
    GENEL ARAYÜZ YARDIMCILARI
    ========================================================================= */
 function toastGoster(mesaj, tip = 'basari') {
@@ -101,7 +101,7 @@ function arayuzuGuncelle() {
             if (btnUkbe) { btnUkbe.style.display = 'inline-block'; btnUkbe.innerText = ayarlar.ukbeAktif ? "UKBE MODU: AÇIK" : "UKBE MODU: KAPALI"; }
         }
 
-        const m = getEl('mağaza-ikon'); if (m) m.href = url('index');
+        const m = getEl('mağaza-ikon'); if (m) m.href = '/';
 
         const mağazaLink = getEl('mağaza-ikon');
         if (mağazaLink) mağazaLink.style.display = ayarlar.mağazaGoster ? 'inline-block' : 'none';

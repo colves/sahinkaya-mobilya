@@ -26,7 +26,7 @@ function kayitOl() {
                     kullanicilar.push(yeniKullaniciModeli);
                     veriKaydet('sahinkaya_kullanicilar', kullanicilar); // Eski sistem uyumluluğu için
                     toastGoster("Kayıt başarılı! Yönlendiriliyorsunuz...", "basari");
-                    setTimeout(() => location.href = url('index'), 1500);
+                    setTimeout(() => location.href = '/', 1500);
                 }).catch(e => {
                     toastGoster("Kayıt oldu ama veri yazılamadı: " + e.message, "hata");
                 });
@@ -51,7 +51,7 @@ function girisYap() {
     auth.signInWithEmailAndPassword(email, sifre)
         .then((userCredential) => {
             toastGoster("Giriş başarılı! Yönlendiriliyorsunuz...", "basari");
-            setTimeout(() => location.href = url('index'), 1500);
+            setTimeout(() => location.href = '/', 1500);
         })
         .catch((error) => {
             toastGoster("E-posta veya sifre hatalı!", "hata");
@@ -64,7 +64,7 @@ function cikisYap() {
         veriKaydet('sahinkaya_aktif', null); 
         sepet = []; 
         veriKaydet('sahinkaya_sepet', sepet); 
-        location.href = url('index'); 
+        location.href = '/'; 
     }).catch((error) => {
         toastGoster("Çıkış yapılırken bir hata oluştu.", "hata");
         console.error("Çıkış hatası:", error);
