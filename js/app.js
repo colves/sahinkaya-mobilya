@@ -1,4 +1,4 @@
-﻿/* =========================================================================
+/* =========================================================================
    app.js — Arayüz, kimlik, mağaza, yönetim ve içerik mantığı + başlangıç
    data.js, layout.js, effects.js'ten SONRA yüklenir.
    ========================================================================= */
@@ -12,13 +12,13 @@ document.addEventListener('DOMContentLoaded', () => {
         anasayfaKontrol();
         arayuzuGuncelle();
         const path = location.pathname;
-        if (path.includes('admin.html')) adminYukle();
+        if (path.includes('admin')) adminYukle();
 
-        if (path.includes('hesabim.html')) sayfaHesabım();
-        if (path.includes('hakkimizda.html')) { const ha = getEl('hakkimizda-metin-alani'); if (ha) ha.innerHTML = `<p style="font-size:1.1rem; line-height:1.8; white-space:pre-wrap;">${hakkimizdaMetin}</p>`; }
-        if (path.includes('iletisim.html')) iletişimRenderEt();
-        if (path.includes('projelerimiz.html')) sayfaProjeler();
-        if (path.includes('kapaklar.html')) sayfaKapaklar();
+        if (path.includes('hesabim')) sayfaHesabım();
+        if (path.includes('hakkimizda')) { const ha = getEl('hakkimizda-metin-alani'); if (ha) ha.innerHTML = `<p style="font-size:1.1rem; line-height:1.8; white-space:pre-wrap;">${hakkimizdaMetin}</p>`; }
+        if (path.includes('iletisim')) iletişimRenderEt();
+        if (path.includes('projelerimiz')) sayfaProjeler();
+        if (path.includes('kapaklar')) sayfaKapaklar();
 
         if (getEl('urun-listesi-izgara')) {
             let gosterilecek = [...urunler].sort((a, b) => (a.sira || 99) - (b.sira || 99));
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             urunListele(gosterilecek);
         }
 
-        if (path.includes('urun-detay.html')) sayfaUrunDetay();
+        if (path.includes('urun-detay')) sayfaUrunDetay();
         if (getEl('sepet-tablo-govde')) sayfaSepet();
         if (getEl('siparis-listesi')) sayfaSiparislerim();
     } catch (err) { console.error("DOM Hatası:", err); }
