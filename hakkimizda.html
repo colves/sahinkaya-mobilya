@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Şahinkaya Mobilya olarak Özel ölçü ahşap mobilya, Özel tasarım kapak modelleri, gardırop, dolap, mutfak ve yatak odası kapakları üretiyoruz.">
+    <meta name="keywords" content="mobilya, gardırop, dolap, sahinkaya, sahinkaya mobilya, ahşap mobilya, Özel tasarım kapak modelleri, masa, yatak odası, mutfak, ahşap dolap">
+    <meta name="author" content="Şahinkaya Ahşap Mobilya">
+    <meta property="og:title" content="Şahinkaya Ahşap Mobilya | Özel Tasarım Kapak Modelleri, Masa, Gardırop">
+    <meta property="og:description" content="Şahinkaya Mobilya olarak Özel ölçü ahşap mobilya, Özel tasarım kapak modelleri, gardırop, dolap, mutfak ve yatak odası kapakları üretiyoruz.">
+    <meta property="og:image" content="https://sahinkayamobilya.com/assets/img/logo.png">
+    <meta property="og:type" content="website">
+    <title>Şahinkaya Ahşap Mobilya | Özel Tasarım Kapak Modelleri, Gardırop, Mutfak</title>
+    <link rel="icon" href="assets/img/mini_logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        (function(){
+            var t = localStorage.getItem('sahinkaya_tema');
+            var tema = '';
+            try { tema = JSON.parse(t); } catch(e) { tema = t; }
+            if (tema === 'light') document.documentElement.classList.add('light-mode');
+            else document.documentElement.classList.add('dark-mode');
+            document.documentElement.style.background = '#0a0a0a';
+        })();
+    </script>
+</head>
+<body>
+<!-- Sayfa Baslik Bandi -->
+<div class="sayfa-baslik-bandi">
+    <img src="https://images.unsplash.com/photo-1588854337236-6889d631faa8?auto=format&fit=crop&w=2000&q=80" alt="Hakkimizda" class="sayfa-baslik-bandi-bg" onerror="this.style.display='none'">
+    <div class="sayfa-baslik-bandi-overlay"></div>
+    <div class="sayfa-baslik-bandi-icerik">
+        <h1>HAKKIMIZDA</h1>
+        <p>20 yılı aşkın deneyim ve tutkulu bir ekip</p>
+    </div>
+</div>
+<main class="bolum" style="max-width:800px;">
+    <div style="text-align:center; margin-bottom: 20px;">
+        <button class="btn-incele sadece-admin-btn" style="display:none; font-size:0.85rem;" onclick="hakkimizdaDuzenleAc()">✏️ İçeriği Düzenle</button>
+    </div>
+    <div id="hakkimizda-metin-alani" style="font-size:1.1rem; white-space:pre-wrap; text-align:center;">Yükleniyor...</div>
+</main>
+
+
+    <!-- Firebase SDK (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/products.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+
+
+
+

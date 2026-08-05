@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Şahinkaya Mobilya olarak Özel ölçü ahşap mobilya, Özel tasarım kapak modelleri, gardırop, dolap, mutfak ve yatak odası kapakları üretiyoruz.">
+    <meta name="keywords" content="mobilya, gardırop, dolap, sahinkaya, sahinkaya mobilya, ahşap mobilya, Özel tasarım kapak modelleri, masa, yatak odası, mutfak, ahşap dolap">
+    <meta name="author" content="Şahinkaya Ahşap Mobilya">
+    <meta property="og:title" content="Şahinkaya Ahşap Mobilya | Özel Tasarım Kapak Modelleri, Masa, Gardırop">
+    <meta property="og:description" content="Şahinkaya Mobilya olarak Özel ölçü ahşap mobilya, Özel tasarım kapak modelleri, gardırop, dolap, mutfak ve yatak odası kapakları üretiyoruz.">
+    <meta property="og:image" content="https://sahinkayamobilya.com/assets/img/logo.png">
+    <meta property="og:type" content="website">
+    <title>Şahinkaya Ahşap Mobilya | Tamamlanan Projelerimiz</title>
+    <link rel="preload" href="assets/img/logo.png" as="image">
+    <link rel="icon" href="assets/img/mini_logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        (function(){
+            var t = localStorage.getItem('sahinkaya_tema');
+            var tema = '';
+            try { tema = JSON.parse(t); } catch(e) { tema = t; }
+            if (tema === 'light') document.documentElement.classList.add('light-mode');
+            else document.documentElement.classList.add('dark-mode');
+            document.documentElement.style.background = '#0a0a0a';
+        })();
+    </script>
+</head>
+<body>
+
+<!-- Sayfa Baslik Bandi -->
+<div class="sayfa-baslik-bandi">
+    <img src="assets/img/ana_sayfa_gorselleri/proje.png" alt="PROJELERIMIZ" class="sayfa-baslik-bandi-bg" onerror="this.style.display='none'">
+    <div class="sayfa-baslik-bandi-overlay"></div>
+    <div class="sayfa-baslik-bandi-icerik">
+        <h1>PROJELERIMIZ</h1>
+        <p>Tamamladığımız villa, daire ve ticari mekan projeleri</p>
+    </div>
+</div>
+
+<!-- Özel Proje CTA -->
+<div style="padding: 30px 5%; position: relative;">
+    <div class="cta-layout">
+        <div class="cta-spacer"></div> <!-- Left Spacer for absolute centering -->
+        <div class="cta-text">
+            <h3 style="color:#fff; margin-bottom:5px; font-size:1.3rem;">Hayalinizdeki Mekanı Birlikte Tasarlayalım</h3>
+            <p style="color:var(--metin-soluk); margin:0 auto; line-height:1.4; font-size: 0.95rem; max-width: 600px;">
+                Tamamladığımız projeleri inceleyin. Sizin mutfaginizi veya mekanınizi da tamamen ihtiyaçlarınıza ve zevkinize göre projelendirip üretebiliriz.
+            </p>
+            <div style="width: 60px; height: 2px; background: var(--altin); margin: 15px auto 0 auto; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 1px; background: rgba(212, 175, 55, 0.5); margin: 5px auto 0 auto; border-radius: 1px;"></div>
+        </div>
+        <div class="cta-action">
+            <a href="iletisim" class="bold-btn" style="background:var(--altin); color:#000; padding:10px 25px; font-size:0.95rem; white-space:nowrap; display:inline-block;">Projenizi Bize Anlatin</a>
+        </div>
+    </div>
+</div>
+
+<main class="bolum">
+    <div style="text-align:right; margin-bottom:20px;">
+        <button id="btn-proje-ekle" class="btn-satin-al btn-oto sadece-admin-btn" style="display:none; margin-top:0;" onclick="projeEkleFormAc()">+ YENI PROJE EKLE</button>
+    </div>
+
+    <!-- Proje Ekle / Düzenle Form Alani -->
+    <div id="proje-ekle-form" class="proje-form-alani" style="display:none; background:var(--kart-bg); padding:30px; border-radius:12px; margin-bottom:40px; box-shadow:0 10px 30px rgba(0,0,0,0.05); border:1px solid var(--kenarlik);">
+        <h3 style="margin-bottom:20px; border-bottom:1px solid var(--kenarlik); padding-bottom:15px; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700;">Proje Ekle / Düzenle</h3>
+
+        <input type="hidden" id="proje-edit-id" value="">
+
+        
+
+        <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+
+            <div class="form-grup" style="flex: 1;">
+
+                <label style="font-size: 0.85rem; font-weight: 700; color: var(--metin-soluk); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">PROJE BAŞLIĞI</label>
+
+                <input type="text" id="proje-baslik" style="width: 100%; padding: 12px; border: 1px solid var(--input-border); border-radius: 6px; background: var(--input-bg); color: var(--metin-renk); font-size: 1rem;">
+
+            </div>
+
+            <div class="form-grup" style="width: 150px;">
+
+                <label style="font-size: 0.85rem; font-weight: 700; color: var(--metin-soluk); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">VITRIN SIRASI</label>
+
+                <input type="number" id="proje-sira" value="3" min="1" style="width: 100%; padding: 12px; border: 1px solid var(--input-border); border-radius: 6px; background: var(--input-bg); color: var(--metin-renk); font-size: 1rem;">
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="form-grup" style="margin-bottom: 20px;">
+
+            <label style="font-size: 0.85rem; font-weight: 700; color: var(--metin-soluk); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">AÇIKLAMA</label>
+
+            <button class="bold-btn" style="background: #2a2520; color: white; border: none; padding: 6px 12px; border-radius: 4px; font-size: 0.85rem; cursor: pointer; margin-bottom: 8px; font-family: 'Inter', sans-serif;" onclick="metinKalinlastir('proje-aciklama')"><b>B</b> Kalin Yap</button>
+
+            <textarea id="proje-aciklama" rows="4" style="width: 100%; padding: 12px; border: 1px solid var(--input-border); border-radius: 6px; background: var(--input-bg); color: var(--metin-renk); resize: vertical; font-size: 1rem;"></textarea>
+
+        </div>
+
+        
+
+        <div class="form-grup" style="margin-bottom: 20px;">
+
+            <label style="font-size: 0.85rem; font-weight: 700; color: var(--metin-soluk); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">GÖRSELLERİ BILGISAYARDAN SEÇ (BIRDEN FAZLA SEÇEBİLİRSİNİZ)</label>
+
+            <div style="border: 1px solid var(--input-border); border-radius: 6px; padding: 10px; background: var(--input-bg);">
+
+                <input type="file" id="proje-dosya" multiple accept="image/*" onchange="projeDosyalariEkle(this)" style="color: var(--metin-renk); font-size: 0.95rem;">
+
+            </div>
+
+        </div>
+
+        
+
+        <div class="form-grup" style="margin-bottom: 30px;">
+
+            <label style="font-size: 0.85rem; font-weight: 700; color: var(--metin-soluk); text-transform: uppercase; letter-spacing: 0.5px; display: block; margin-bottom: 8px;">VEYA LINK ILE GÖRSEL EKLE (YAZIP ENTER'A BASIN)</label>
+
+            <input type="text" id="proje-url-ekle" placeholder="https://..." onkeyup="if(event.key==='Enter') projeUrlEkle(this)" style="width: 100%; padding: 12px; border: 1px solid var(--input-border); border-radius: 6px; background: var(--input-bg); color: var(--metin-renk); font-size: 1rem;">
+
+        </div>
+
+        
+
+        <h4 style="margin-bottom: 15px; font-size: 1.2rem; border-bottom: 1px solid var(--kenarlik); padding-bottom: 10px; font-family: 'Playfair Display', serif; font-weight: 700;">Seçilen Görseller ve Odak Noktalari</h4>
+
+        <div id="proje-onizleme-listesi" class="görsel-onizleme-listesi" style="margin-bottom: 30px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+
+            <!-- JavaScript ile doldurulacak -->
+
+            <p style="color:var(--metin-soluk); font-size:1rem; grid-column: 1 / -1;">Henüz görsel eklenmedi.</p>
+
+        </div>
+
+
+
+        <div style="display: flex; gap: 15px;">
+
+            <button class="btn-satin-al btn-oto" style="font-weight: 700; padding: 14px 28px; letter-spacing: 1px; border-radius: 6px;" onclick="projeKaydet()">PROJEYI KAYDET</button>
+
+            <button class="btn-satin-al btn-ghost btn-oto" style="font-weight: 700; padding: 14px 28px; letter-spacing: 1px; color: var(--metin-renk); border-radius: 6px;" onclick="projeFormKapat()">IPTAL ET</button>
+
+        </div>
+
+    </div>
+
+    
+
+    <!-- Proje Ürün Listelenecegi Alan -->
+
+    <div id="projeler-alani" style="display: flex; flex-direction: column; gap: 40px; margin-top: 20px;"></div>
+
+</main>
+
+
+
+
+    <!-- Firebase SDK (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    
+<script src="js/data.js"></script>
+
+<script src="js/layout.js"></script>
+
+<script src="js/ui.js"></script>
+
+<script src="js/auth.js"></script>
+
+<script src="js/admin.js"></script>
+
+<script src="js/shop.js"></script>
+
+<script src="js/projects.js"></script>
+
+<script src="js/products.js"></script>
+
+<script src="js/effects.js"></script>
+
+<script src="js/app.js"></script>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+

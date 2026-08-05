@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hesabım - Şahinkaya Ahşap</title>
+    <link rel="icon" href="assets/img/mini_logo.png">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script>
+        (function(){
+            var t = localStorage.getItem('sahinkaya_tema');
+            var tema = ''; try { tema = JSON.parse(t); } catch(e) { tema = t; }
+            if (tema === 'light') document.documentElement.classList.add('light-mode');
+            else document.documentElement.classList.add('dark-mode');
+            document.documentElement.style.background = '#0a0a0a';
+        })();
+    </script>
+</head>
+<body>
+<main class="bolum">
+    <h2 class="bolum-baslik">Hesap Bilgilerim</h2>
+    <div style="display:flex; gap:30px; justify-content:center; flex-wrap:wrap;">
+        <div class="form-kutu" style="max-width:400px;">
+            <h3 style="margin-bottom:20px;">Bilgileri Güncelle</h3>
+            <div class="form-grup"><label>Ad Soyad <span style="color:var(--hata);">*</span></label><input type="text" id="profil-isim"></div>
+            <div class="form-grup"><label>E-Posta <span style="color:var(--hata);">*</span></label><input type="email" id="profil-email"></div>
+            <div class="form-grup"><label>Telefon <span style="color:var(--hata);">*</span></label><input type="text" id="profil-tel" placeholder="xxx xxx xx xx"></div>
+            <div class="form-grup"><label>Açik Adres <span style="color:var(--hata);">*</span></label><textarea id="profil-adres" rows="3"></textarea></div>
+            <button class="btn-satin-al" onclick="profilKaydet()">Kaydet</button>
+        </div>
+        <div class="form-kutu" style="max-width:300px;">
+            <h3 style="margin-bottom:20px;">Şifre Degistir</h3>
+            <div class="form-grup"><label>Eski Şifreniz</label><input type="password" id="eski-sifre"></div>
+            <div class="form-grup"><label>Yeni Şifreniz</label><input type="password" id="yeni-sifre"></div>
+            <div class="form-grup"><label>Yeni Şifreniz (Tekrar)</label><input type="password" id="yeni-sifre-tekrar"></div>
+            <button class="btn-satin-al" onclick="sifreDegistir()" style="margin-bottom:24px;">Şifreyi Yenile</button>
+            <hr class="admin-ayrac">
+            <button class="btn-satin-al btn-tehlike" onclick="cikisYap()">ÇIKIŞ YAP</button>
+        </div>
+        <div class="form-kutu" style="max-width:400px; width:100%;">
+            <h3 style="margin-bottom:20px;">Favori Ürünler</h3>
+            <div id="favori-listesi">Yükleniyor...</div>
+        </div>
+    </div>
+</main>
+
+
+    <!-- Firebase SDK (compat) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+    <script src="js/firebase-init.js"></script>
+    
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/products.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+
+

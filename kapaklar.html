@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Şahinkaya Mobilya olarak özel ölçü ahşap mobilya, özel tasarım kapak modelleri, gardırop, dolap, mutfak ve yatak odası kapakları üretiyoruz.">
+    <meta name="keywords" content="mobilya, gardırop, dolap, sahinkaya, sahinkaya mobilya, ahşap mobilya, özel tasarım kapak modelleri, masa, yatak odası, mutfak, ahşap dolap">
+    <meta name="author" content="Şahinkaya Ahşap Mobilya">
+    <meta property="og:title" content="Şahinkaya Ahşap Mobilya | Özel Tasarım Kapak Modelleri, Masa, Gardırop">
+    <meta property="og:description" content="Şahinkaya Mobilya olarak özel ölçü ahşap mobilya, özel tasarım kapak modelleri, gardırop, dolap, mutfak ve yatak odası kapakları üretiyoruz.">
+    <meta property="og:image" content="https://sahinkayamobilya.com/assets/img/logo.png">
+    <meta property="og:type" content="website">
+    <title>Şahinkaya Ahşap Mobilya | Özel Tasarım Kapak Modelleri, Gardırop, Mutfak</title>
+    <link rel="preload" href="assets/img/logo.png" as="image">
+    <link rel="icon" href="assets/img/mini_logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        (function(){
+            var t = localStorage.getItem('sahinkaya_tema');
+            var tema = '';
+            try { tema = JSON.parse(t); } catch(e) { tema = t; }
+            if (tema === 'light') document.documentElement.classList.add('light-mode');
+            else document.documentElement.classList.add('dark-mode');
+            document.documentElement.style.background = '#0a0a0a';
+        })();
+    </script>
+</head>
+<body>
+
+<!-- Sayfa Baslik Bandi -->
+<div class="sayfa-baslik-bandi">
+    <img src="assets/img/ana_sayfa_gorselleri/kapak.png"
+         alt="Kapak Modelleri"
+         class="sayfa-baslik-bandi-bg"
+         onerror="this.style.display='none'">
+    <div class="sayfa-baslik-bandi-overlay"></div>
+    <div class="sayfa-baslik-bandi-icerik">
+        <h1>KAPAK MODELLERİ</h1>
+        <p>Özel kesim ve ölçüde, masif ahşap kapaklar</p>
+    </div>
+</div>
+
+<!-- Özel Sipariş CTA -->
+<div style="padding: 30px 5%; position: relative;">
+    <div class="cta-layout">
+        <div class="cta-spacer"></div> <!-- Left Spacer for absolute centering -->
+        <div class="cta-text">
+            <h3 style="color:#fff; margin-bottom:5px; font-size:1.3rem;">Özel ölçü Kapak Üretimi</h3>
+            <p style="color:var(--metin-soluk); margin:0 auto; line-height:1.4; font-size: 0.95rem; max-width: 600px;">
+                Beğendiğiniz modelleri, tamamen sizin istediğiniz ölçü ve renk seçenekleriyle özel olarak üretiyoruz. Fiyat almak ve projenizi anlatmak için bize ulaşın.
+            </p>
+            <div style="width: 60px; height: 2px; background: var(--altin); margin: 15px auto 0 auto; border-radius: 2px;"></div>
+            <div style="width: 30px; height: 1px; background: rgba(212, 175, 55, 0.5); margin: 5px auto 0 auto; border-radius: 1px;"></div>
+        </div>
+        <div class="cta-action">
+            <a href="iletisim" class="bold-btn" style="background:var(--altin); color:#000; padding:10px 25px; font-size:0.95rem; white-space:nowrap; display:inline-block;">Fiyat Teklifi Al</a>
+        </div>
+    </div>
+</div>
+
+<main class="bolum">
+    <div style="text-align:right; margin-bottom:20px;">
+        <button class="btn-satin-al btn-oto sadece-admin-btn" style="display:none; margin-top:0;" onclick="kapakEkleFormAc()">+ YENI KAPAK EKLE</button>
+    </div>
+    <div id="kapak-ekle-form" class="form-kutu" style="display:none; max-width:500px; margin:0 auto 40px auto;">
+        <h3 style="margin-bottom:15px;">Kapak Ekle</h3>
+        <div class="form-grup">
+            <label>Kapak Kodu (Örn: HK_006)<br><small style="color:var(--metin-soluk); font-weight:normal; text-transform:none;">*Çoklu resim seçerseniz resmin ismi kod olarak kullanilir.</small></label>
+            <input type="text" id="kapak-kodu">
+        </div>
+        <div class="form-grup"><label>Kapak Görseli (Birden fazla seçebilirsiniz)</label><input type="file" id="kapak-dosya" accept="image/*" multiple></div>
+        <button class="btn-satin-al" onclick="kapakKaydet()">Yükle ve Kaydet</button>
+    </div>
+    <div id="kapaklar-katalog" class="kapak-grid"></div>
+</main>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/products.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+
+
+

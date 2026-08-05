@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Şahinkaya Mobilya olarak özel ölçü ahşap mobilya, özel tasarım kapak modelleri, gardırop, dolap, mutfak ve yatak odası kapakları üretiyoruz.">
+    <meta name="keywords" content="mobilya, gardırop, dolap, şahinkaya, şahinkaya mobilya, ahşap mobilya, özel tasarım kapak modelleri, masa, yatak odası, mutfak, ahşap dolap">
+    <meta name="author" content="Şahinkaya Ahşap Mobilya">
+    <meta property="og:title" content="Şahinkaya Ahşap Mobilya | Özel Tasarım Kapak Modelleri, Masa, Gardırop">
+    <meta property="og:description" content="Şahinkaya Mobilya olarak özel ölçü ahşap mobilya, özel tasarım kapak modelleri, gardırop, dolap, mutfak ve yatak odası kapakları üretiyoruz.">
+    <meta property="og:image" content="https://sahinkayamobilya.com/assets/img/logo.png">
+    <meta property="og:type" content="website">
+    <title>Şahinkaya Ahşap Mobilya | Özel Tasarım Kapak Modelleri, Gardırop, Mutfak</title>
+    <link rel="preload" href="assets/img/logo.png" as="image">
+    <link rel="icon" href="assets/img/mini_logo.png">
+    <link rel="stylesheet" href="css/main.css">
+    <!-- Tema flaş önleme: kayitlı temayı uygula -->
+    <script>
+        (function(){
+            var t = localStorage.getItem('sahinkaya_tema');
+            var tema = '';
+            try { tema = JSON.parse(t); } catch(e) { tema = t; }
+            if (tema === 'light') document.documentElement.classList.add('light-mode');
+            else document.documentElement.classList.add('dark-mode');
+        })();
+        document.documentElement.style.background = '#0a0a0a';
+    </script>
+</head>
+<body>
+
+
+<!-- ── HERO BÖLÜMÜ ── -->
+<section class="hero-tam" id="hero-section">
+    <div class="hero-overlay"></div>
+    <img
+        src="assets/img/ana_sayfa_gorselleri/ana_sayfa.png"
+        alt="Şahinkaya Ahşap Mobilya Showroom"
+        class="hero-bg-resim"
+        onerror="this.style.display='none'"
+    >
+
+    <div class="hero-icerik">
+        <span class="hero-pill">El Yapımı · Masif Ahşap · Özel Tasarım</span>
+
+        <h1 class="hero-baslik">
+            MEKANINIZA<br>
+            <em>DEĞER</em> KATIYORUZ
+        </h1>
+
+        <p class="hero-alt-yazi">
+            Doğanın sıcaklığını ve zarafetini ahşabın eşsiz dokusuyla birleştiriyoruz.
+            Her parça, sizin için özel olarak tasarlanıp el emeğiyle üretiliyor.
+        </p>
+
+        <div class="hero-buton-grup">
+            <a href="projelerimiz" class="btn-kesfet" id="btn-hero-projeler">
+                Projelerimizi İncele
+                <span class="btn-kesfet-ok">↗</span>
+            </a>
+            <a href="iletisim" class="btn-kesfet-ghost" id="btn-hero-urunler">
+                İletişime Geçin
+            </a>
+        </div>
+
+        <div class="hero-istatistikler">
+            <div class="hero-stat">
+                <span class="hero-stat-sayi">20<sup>+</sup></span>
+                <span class="hero-stat-etiket">Yıllık Deneyim</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ── AKORDİON PANELLER ── -->
+<section class="kategori-accordion">
+            <div class="akordion-panel aktif"
+                 style="background-image: url('assets/img/ana_sayfa_gorselleri/kapak.png');"
+                 onclick="akordionAc(this, 'kapaklar.html')"
+                 id="panel-kapaklar">
+                <div class="akordion-icerik">
+                    <span class="panel-yazi-dikey">Kapaklar</span>
+                    <div class="panel-bilgi">
+                        <span class="panel-no">01</span>
+                        <h2 class="panel-baslik">Kapaklar</h2>
+                        <p style="color:rgba(255,255,255,0.65); font-size:0.9rem; margin-bottom:16px; max-width:280px; font-family:'Inter',sans-serif; line-height:1.6;">
+                            Her tarza uygun, uzun ömürlü ve şık mutfak & dolap kapakları.
+                        </p>
+                        <a href="kapaklar" class="panel-link-btn" onclick="event.stopPropagation()">
+                            İncele ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="akordion-panel"
+                 style="background-image: url('assets/img/ana_sayfa_gorselleri/proje.png');"
+                 onclick="akordionAc(this, 'projelerimiz.html')"
+                 id="panel-projeler">
+                <div class="akordion-icerik">
+                    <span class="panel-yazi-dikey">Projelerimiz</span>
+                    <div class="panel-bilgi">
+                        <span class="panel-no">02</span>
+                        <h2 class="panel-baslik">Projelerimiz</h2>
+                        <p style="color:rgba(255,255,255,0.65); font-size:0.9rem; margin-bottom:16px; max-width:280px; font-family:'Inter',sans-serif; line-height:1.6;">
+                            İlham veren, özel tasarım iç mimari projelerimiz.
+                        </p>
+                        <a href="projelerimiz" class="panel-link-btn" onclick="event.stopPropagation()">
+                            İncele ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="akordion-panel"
+                 style="background-image: url('assets/img/ana_sayfa_gorselleri/urun.png');"
+                 onclick="akordionAc(this, 'kategori.html')"
+                 id="panel-urunler">
+                <div class="akordion-icerik">
+                    <span class="panel-yazi-dikey">Ürünler</span>
+                    <div class="panel-bilgi">
+                        <span class="panel-no">03</span>
+                        <h2 class="panel-baslik">Ürünler</h2>
+                        <p style="color:rgba(255,255,255,0.65); font-size:0.9rem; margin-bottom:16px; max-width:280px; font-family:'Inter',sans-serif; line-height:1.6;">
+                            Mobilya koleksiyonumuzdaki en seçkin ürünleri keşfedin.
+                        </p>
+                        <a href="kategori" class="panel-link-btn" onclick="event.stopPropagation()">
+                            İncele ↗
+                        </a>
+                    </div>
+                </div>
+            </div>
+</section>
+
+<!-- ── NASIL ÇALIŞIYORUZ & CTA ── -->
+<section style="background:#050505; padding: 100px 5%;">
+    <div style="max-width:1400px; margin:0 auto;">
+        <div style="text-align: center;">
+            <span class="bolum-on-etiket" style="display:inline-block; margin-bottom: 10px;">Sürecimiz</span>
+            <h2 class="bolum-baslik" style="width: 100%; text-align: center;">NASIL ÇALIŞIYORUZ?</h2>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px;">
+            <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                <span style="color: var(--altin); font-size: 2.5rem; font-weight: 700; opacity: 0.5;">1</span>
+                <h3 style="color: #fff; margin: 20px 0 15px 0; font-size: 1.4rem;">Keşif ve Fikir</h3>
+                <p style="color: rgba(255,255,255,0.6); line-height: 1.6;">Bize hayalinizdeki mutfağı veya projeyi anlatın. İhtiyaçlarınızı ve zevklerinizi dinliyor, mekanınıza en uygun çözümleri üretiyoruz.</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                <span style="color: var(--altin); font-size: 2.5rem; font-weight: 700; opacity: 0.5;">2</span>
+                <h3 style="color: #fff; margin: 20px 0 15px 0; font-size: 1.4rem;">3D Tasarım</h3>
+                <p style="color: rgba(255,255,255,0.6); line-height: 1.6;">Konuştuğumuz fikirleri gerçeğe en yakın haliyle 3D olarak projelendiriyoruz. Onayınızla birlikte üretime geçiyoruz.</p>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.03); padding: 40px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.05); text-align: center;">
+                <span style="color: var(--altin); font-size: 2.5rem; font-weight: 700; opacity: 0.5;">3</span>
+                <h3 style="color: #fff; margin: 20px 0 15px 0; font-size: 1.4rem;">Üretim ve Montaj</h3>
+                <p style="color: rgba(255,255,255,0.6); line-height: 1.6;">Kendi atölyemizde özenle ürettiğimiz özel ölçü kapaklarınızı ve mobilyalarınızı uzman ekibimizle anahtar teslim kuruyoruz.</p>
+            </div>
+        </div>
+
+        <div style="text-align:center; margin-top: 100px;">
+            <h2 class="bolum-baslik" style="width: 100%; text-align: center; margin-bottom: 20px;">HAYALİNİZDEKİ MEKANI<br>BİRLİKTE TASARLAYALIM</h2>
+            <p style="color:var(--metin-soluk); max-width: 600px; margin: 0 auto 40px auto; font-size: 1.1rem; line-height: 1.6;">
+                Özel ölçü mutfak, dolap ve kapak siparişleriniz için tasarım stüdyomuzla iletişime geçin. Tamamen size özel üretelim.
+            </p>
+            <a href="iletisim" class="btn-kesfet" style="margin:0 auto; background: var(--altin); color:#000;">
+                İletişime Geçin
+                <span class="btn-kesfet-ok" style="background: rgba(0,0,0,0.1); color:#000;">↗</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer style="background:#020202; padding: 80px 5% 40px 5%; border-top: 1px solid rgba(255,255,255,0.05);">
+    <div style="max-width:1400px; margin:0 auto; display:flex; flex-wrap:wrap; gap:40px; justify-content:space-between;">
+        <div style="flex:1; min-width:250px;">
+            <p style="color:var(--metin-soluk); font-size:0.9rem; line-height:1.6; max-width:300px;">
+                Doğanın estetiğini modern tasarımla buluşturarak yaşam alanlarınıza değer katıyoruz.
+            </p>
+        </div>
+        <div style="flex:1; min-width:200px;">
+            <h4 style="color:#fff; font-size:1.1rem; margin-bottom:20px; font-weight:600;">Menü</h4>
+            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px;">
+                <li><a href="index" style="color:var(--metin-soluk); text-decoration:none; transition:0.2s;">Ana Sayfa</a></li>
+                <li><a href="kategori" style="color:var(--metin-soluk); text-decoration:none; transition:0.2s;">Ürünler</a></li>
+                <li><a href="projelerimiz" style="color:var(--metin-soluk); text-decoration:none; transition:0.2s;">Projelerimiz</a></li>
+                <li><a href="hakkimizda" style="color:var(--metin-soluk); text-decoration:none; transition:0.2s;">Hakkımızda</a></li>
+            </ul>
+        </div>
+        <div style="flex:1; min-width:200px;">
+            <h4 style="color:#fff; font-size:1.1rem; margin-bottom:20px; font-weight:600;">İletişim</h4>
+            <ul style="list-style:none; padding:0; display:flex; flex-direction:column; gap:10px; color:var(--metin-soluk);">
+                <li>📍 Sakarya, Adapazarı</li>
+                <li>📱 +90 533 663 9714</li>
+                <li>✉️ sahinkayaadem@gmail.com</li>
+            </ul>
+        </div>
+    </div>
+    <div style="max-width:1400px; margin: 60px auto 0 auto; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); text-align:center; color:rgba(255,255,255,0.3); font-size:0.8rem;">
+        &copy; 2026 Şahinkaya Ahşap Mobilya. Tüm Hakları Saklıdır.
+    </div>
+</footer>
+
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script src="js/firebase-init.js"></script>
+<script src="js/data.js"></script>
+<script src="js/layout.js"></script>
+<script src="js/ui.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/admin.js"></script>
+<script src="js/shop.js"></script>
+<script src="js/projects.js"></script>
+<script src="js/products.js"></script>
+<script src="js/effects.js"></script>
+<script src="js/app.js"></script>
+
+<script>
+/* Akordion panel kontrolcüsü */
+function akordionAc(panel, url) {
+    const tumPaneller = document.querySelectorAll('.akordion-panel');
+    if (panel.classList.contains('aktif')) {
+        // Aktifse direkt sayfaya git
+        window.location.href = url;
+        return;
+    }
+    tumPaneller.forEach(p => p.classList.remove('aktif'));
+    panel.classList.add('aktif');
+}
+
+/* Anasayfa ürün grid yükleyici (ilk 6 ürün) */
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        const grid = document.getElementById('anasayfa-urun-grid');
+        if (!grid || typeof urunler === 'undefined') return;
+        const gosterilecek = [...urunler]
+            .filter(u => u.stokta !== false)
+            .sort((a, b) => (a.sira || 99) - (b.sira || 99))
+            .slice(0, 6);
+
+        if (gosterilecek.length === 0) {
+            grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; color:rgba(255,255,255,0.3); padding:60px; font-family:Inter,sans-serif;">Henüz ürün eklenmemiş.</div>';
+            return;
+        }
+        grid.innerHTML = gosterilecek.map((u, i) => `
+            <div class="urun-kart" style="transition-delay:${i * 0.08}s" onclick="location.href="urun-detay?id=${u.id}"">
+                <div class="urun-kart-resim-kapsam">
+                    <img src="${u.resimler && u.resimler[0] ? u.resimler[0] : 'assets/img/logo.png'}"
+                         alt="${u.ad || ''}"
+                         onerror="this.src='assets/img/logo.png'">
+                </div>
+                <div class="urun-kart-icerik">
+                    <div class="urun-kategori">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21C16 16.8 19 12.8467 19 9.5C19 5.35786 15.866 2 12 2C8.13401 2 5 5.35786 5 9.5C5 12.8467 8 16.8 12 21Z"/><circle cx="12" cy="9" r="2" fill="currentColor"/></svg>
+                        ${(u.kategoriler && u.kategoriler[0]) ? u.kategoriler[0].replace(/-/g,' ').replace(/\b\w/g,c=>c.toUpperCase()) : 'Ahşap'}
+                    </div>
+                    <h3>${u.ad || ''}</h3>
+                    <div class="urun-fiyat">${typeof ayarlar !== 'undefined' && ayarlar.fiyatGizle ? '' : Number(u.fiyat).toLocaleString('tr-TR') + ' TL'}</div>
+                    <a href="urun-detay?id=${u.id}" class="btn-satin-al" onclick="event.stopPropagation()">İncele ↗</a>
+                </div>
+            </div>
+        `).join('');
+        // Kart animasyonu
+        setTimeout(() => {
+            grid.querySelectorAll('.urun-kart').forEach(k => k.classList.add('goster'));
+        }, 100);
+    }, 800);
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
