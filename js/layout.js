@@ -43,7 +43,7 @@
             <a href="${url('iletisim')}" class="btn-contact-now" id="btn-iletisim-nav">
                 <span class="btn-dot"></span>
                 İletişim
-                <span class="btn-arrow-circle">\u2197\uFE0E</span>
+                <span class="btn-arrow-circle"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></span>
             </a>
         </div>
     </div>
