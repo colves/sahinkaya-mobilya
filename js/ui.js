@@ -62,7 +62,7 @@ function arayuzuGuncelle() {
 
         setDisp('nav-takip', ayarlar.takipGoster ? 'inline-block' : 'none');
         setDisp('nav-hakkimizda', ayarlar.hakkimizdaGoster ? 'inline-block' : 'none');
-        setDisp('nav-iletişim', ayarlar.iletişimGoster ? 'inline-block' : 'none');
+        setDisp('btn-iletisim-nav', ayarlar.iletişimGoster ? 'inline-flex' : 'none');
         setDisp('nav-projeler', ayarlar.projelerGoster ? 'inline-block' : 'none');
         setDisp('nav-urunler', ayarlar.urunlerGoster ? 'inline-block' : 'none');
         setDisp('mağaza-ikon', ayarlar.mağazaGoster ? 'inline-block' : 'none');

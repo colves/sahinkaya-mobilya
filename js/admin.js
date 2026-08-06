@@ -41,8 +41,9 @@ async function urunKategoriEkleCikar(id, kat, isChecked) {
 
 async function siparisDurumGuncelle(kadi, sNo, durum) {
     const m = kullanicilar.find(x => x.kadi === kadi);
-    if (m) { 
-        const s = m.siparisler.find(y => y.siparisNo === sNo); 
+    if (m) {
+        if (!m.siparisler) m.siparisler = [];
+        const s = m.siparisler.find(y => y.siparisNo === sNo);
         if (s) { 
             s.durum = durum; 
             let safeId = m.uid || m.email || m.kadi;
@@ -55,8 +56,8 @@ async function siparisDurumGuncelle(kadi, sNo, durum) {
 async function adminSiparisSil(kadi, sNo) {
     ozelOnayGoster("Siparişi silmek istediğinize emin misiniz?", async () => {
         const m = kullanicilar.find(x => x.kadi === kadi);
-        if (m) { 
-            m.siparisler = m.siparisler.filter(y => y.siparisNo !== sNo); 
+        if (m) {
+            m.siparisler = (m.siparisler || []).filter(y => y.siparisNo !== sNo);
             let safeId = m.uid || m.email || m.kadi;
             if(safeId) await db.collection('sistem').doc('kullanicilar').collection('liste').doc(safeId).update({ siparisler: m.siparisler }).catch(()=>{});
             veriKaydet('sahinkaya_kullanicilar', kullanicilar); 
@@ -110,6 +111,7 @@ function adminYukle() {
             let islemBtn = '-';
             if (m.rol !== 'kurucu') islemBtn = `<button class="btn-incele" onclick="sifreDegistirAdmin('${m.kadi}')" style="margin-bottom:5px;">Şifre Değiş</button><br><button class="btn-incele btn-tehlike" onclick="hesapSilAdmin('${m.kadi}')">Hesap Sil</button>`;
 
+            if (!m.siparisler) m.siparisler = [];
             let siparisListesiHtml = m.siparisler.map(s => `
                 <li style="font-size:0.85rem; border-bottom:1px solid var(--kenarlik); padding-bottom:5px; margin-bottom:5px;">
                     <b>Kod:</b> ${s.siparisNo} | <b>Tarih:</b> ${s.tarih} | <b>Tutar:</b> ${Number(s.tutar).toLocaleString('tr-TR')} TL<br>

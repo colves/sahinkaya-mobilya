@@ -46,16 +46,25 @@ auth.onAuthStateChanged(async (user) => {
             eskiKullanici = null;
             localStorage.removeItem('sahinkaya_aktif');
         }
-        const yeniKullanici = { email: user.email, rol: role, uid: user.uid, isim: user.displayName || '' };
-        
+        // Mevcut profil alanlarını (telefon, adres, favoriler, siparişler, sepet) koruyarak birleştir;
+        // aksi halde her auth durum değişiminde bu alanlar sessizce silinirdi.
+        const yeniKullanici = Object.assign(
+            { telefon: '', adres: '', favoriler: [], siparisler: [], sepet: [], kadi: user.email },
+            eskiKullanici,
+            { email: user.email, rol: role, uid: user.uid, isim: user.displayName || (eskiKullanici && eskiKullanici.isim) || '' }
+        );
+
         if (!eskiKullanici || eskiKullanici.email !== user.email || eskiKullanici.rol !== role || eskiKullanici.isim !== yeniKullanici.isim) {
             localStorage.setItem('sahinkaya_aktif', JSON.stringify(yeniKullanici));
-            if (typeof window !== 'undefined') window.aktifKullanici = yeniKullanici;
+            // NOT: 'aktifKullanici' data.js'te "let" ile tanımlı bir global'dir. window.aktifKullanici = ...
+            // ataması bununla BAĞLANTISIZ ayrı bir özellik yaratır (ES6 let/const window'a yansımaz) ve
+            // arayuzuGuncelle() gibi fonksiyonlar hep eski/boş değeri görürdü. Doğrudan atama yapılmalı.
+            aktifKullanici = yeniKullanici;
             if(typeof arayuzuGuncelle === 'function') arayuzuGuncelle();
         }
     } else {
         localStorage.setItem('sahinkaya_aktif', JSON.stringify(null));
-        if (typeof window !== 'undefined') window.aktifKullanici = null;
+        aktifKullanici = null;
         if(typeof arayuzuGuncelle === 'function') arayuzuGuncelle();
     }
 });
@@ -86,9 +95,10 @@ async function bulutSenkronizasyonu() {
         if(yeniUrunler.length > 0) {
             yeniUrunler.sort((a, b) => (a.sira || 99) - (b.sira || 99));
             // Sadece sunucudaki ürün sayısı lokalden az değilse veya ilk yüklemeyse üzerine yaz
-            if (typeof window.urunler === 'undefined' || yeniUrunler.length >= window.urunler.length) {
+            // (bkz. not yukarıda: gerçek "urunler" global'i kontrol edilmeli, window.urunler değil)
+            if (typeof urunler === 'undefined' || yeniUrunler.length >= urunler.length) {
                 localStorage.setItem('sahinkaya_urunler', JSON.stringify(yeniUrunler));
-                if(typeof window !== 'undefined') window.urunler = yeniUrunler;
+                urunler = yeniUrunler;
                 changed = true;
             }
         }
@@ -99,7 +109,7 @@ async function bulutSenkronizasyonu() {
         kulSnap.forEach(doc => { yeniKul.push(doc.data()); });
         if(yeniKul.length > 0) {
             localStorage.setItem('sahinkaya_kullanicilar', JSON.stringify(yeniKul));
-            if(typeof window !== 'undefined') window.kullanicilar = yeniKul;
+            kullanicilar = yeniKul;
             changed = true;
         }
 
@@ -109,7 +119,7 @@ async function bulutSenkronizasyonu() {
         kapakSnap.forEach(doc => { yeniKapak.push(doc.data()); });
         if(yeniKapak.length > 0) {
             localStorage.setItem('sahinkaya_kapaklar', JSON.stringify(yeniKapak));
-            if(typeof window !== 'undefined') window.kapaklar = yeniKapak;
+            kapaklar = yeniKapak;
             changed = true;
         }
 
@@ -120,7 +130,7 @@ async function bulutSenkronizasyonu() {
         if(yeniProje.length > 0) {
             yeniProje.sort((a, b) => (a.sira || 99) - (b.sira || 99));
             localStorage.setItem('sahinkaya_projeler', JSON.stringify(yeniProje));
-            if(typeof window !== 'undefined') window.projeler = yeniProje;
+            projeler = yeniProje;
             changed = true;
         }
         

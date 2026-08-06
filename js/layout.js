@@ -35,6 +35,7 @@
                        oninput="aramaOnerileriGetir()" onkeyup="if(event.key==='Enter') urunAra()" onfocus="aramaOnerileriGetir()">
                 <div id="arama-sonuclari" style="display:none; position:absolute; top:100%; right:0; width:300px; max-height:360px; overflow-y:auto; background:var(--yuzey); border:1px solid var(--kenarlik-belirgin); border-radius:var(--radius); box-shadow:var(--golge-orta); margin-top:8px; z-index:9999; text-align:left; padding:8px 0;"></div>
             </div>
+            <button type="button" class="btn-nav sadece-admin-btn" id="btn-menu-ayar" style="display:none;" onclick="menuAyarModalAc()" title="Menü Görünüm Ayarları">🎨 Menü</button>
             <a href="${url('admin')}" class="btn-nav btn-admin sadece-admin-btn" id="btn-admin" style="display:none;">Yönetim Paneli</a>
             <a href="${url('siparisler')}" class="btn-nav" id="btn-siparis" style="display:none;">Siparişlerim</a>
             <a href="${url('hesabim')}" class="btn-nav" id="btn-hesabim" style="display:none;">Hesabım</a>
@@ -59,18 +60,6 @@
         <div class="modal-btn-grup">
             <button class="modal-btn-iptal" onclick="ozelOnayKapat()">İptal Et</button>
             <button class="modal-btn-onay" onclick="ozelOnayKabul()">Evet, Onaylıyorum</button>
-        </div>
-    </div>
-</div>
-
-<div id="admin-sifre-modal" class="ozel-modal-arkaplan">
-    <div class="ozel-modal-kutu">
-        <h3>Kullanici Şifresini Değiştir</h3>
-        <input type="password" id="admin-yeni-sifre" class="modal-input" placeholder="Yeni Şifre">
-        <input type="password" id="admin-yeni-sifre-tekrar" class="modal-input" placeholder="Yeni Şifre (Tekrar)">
-        <div class="modal-btn-grup">
-            <button class="modal-btn-iptal" onclick="adminSifreIptal()">İptal Et</button>
-            <button class="modal-btn-onay olumlu" onclick="adminSifreKaydet()">Kaydet</button>
         </div>
     </div>
 </div>

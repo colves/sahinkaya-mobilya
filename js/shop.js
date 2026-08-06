@@ -38,6 +38,7 @@ async function siparisiTamamla() {
         const takipKodu = 'TRK' + Math.floor(100000 + Math.random() * 900000);
         
         const yeniSiparis = { siparisNo: takipKodu, tarih: new Date().toLocaleDateString('tr-TR'), urunler: guvenliUrunler, tutar: genelToplam, durum: 'Hazırlanıyor' };
+        if (!aktifKullanici.siparisler) aktifKullanici.siparisler = [];
         aktifKullanici.siparisler.push(yeniSiparis);
         
         let safeId = aktifKullanici.uid || aktifKullanici.email || aktifKullanici.kadi;
@@ -63,7 +64,7 @@ function siparisSorgula() {
     const kod = getEl('takip-kodu-input').value.trim(), sonucAlani = getEl('sorgu-sonucu');
     if (!kod) return toastGoster("Kod girin.", "hata");
     let bulunan = null, sahibi = null;
-    for (const u of kullanicilar) { const sip = u.siparisler.find(s => s.siparisNo === kod); if (sip) { bulunan = sip; sahibi = u.kadi; break; } }
+    for (const u of kullanicilar) { const sip = (u.siparisler || []).find(s => s.siparisNo === kod); if (sip) { bulunan = sip; sahibi = u.kadi; break; } }
     if (bulunan) {
         const dRenk = bulunan.durum === 'İptal Edildi' ? 'var(--hata)' : 'var(--basari)';
         sonucAlani.innerHTML = `<div class="siparis-kart" style="text-align:left; margin-top:20px;"><div class="siparis-baslik"><span>Durum: <span style="color:${dRenk};">${bulunan.durum || 'Hazırlanıyor'}</span></span><span>${bulunan.tarih}</span></div><p><strong>Müşteri:</strong> ${kacis(sahibi)}</p><p><strong>Toplam:</strong> ${Number(bulunan.tutar).toLocaleString('tr-TR')} TL</p></div>`;
